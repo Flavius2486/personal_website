@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <!-- Basic informations -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Site informations -->
+    <title>Flavius</title>
+    <meta name="author" content="Dominik Serafin" />
+
+    <!-- Stylesheets -->
+     
+    <link
+      href="/css/projects.css"
+      type="text/css"
+      rel="stylesheet"
+      media="all"
+    />
+
+    <base href="/">
+</head>
+<body>
+   <section id="realizations" class="realizations">
+			<div class="realizations__wrapper">
+
+				<div class="section-header">
+					<div class="section-header__title  section-header__title--realizations">Portfolio...</div>
+					<div class="section-header__subtitle">One of the selected projects that I had the pleasure to work on</div>
+				</div>
+
+				<div class="showcase">
+					<div class="showcase__stage-wrapper">
+						<div class="showcase__stage  showcase__stage--active">
+							<div class="showcase__slider">
+								<ul class="rslides">
+                                    {{#each project.imagesPath}} 
+										<img src='{{this}}'>
+                                    {{/each}}
+								</ul>
+							</div>
+							<div class="showcase__infos-wrapper">
+								<div class="showcase__title">
+									{{project.title}}
+									<div class="showcase__title-description">Personal Project</div>
+								</div>
+
+								<div class="showcase__point">
+									<div class="showcase__point-title">My Responsibilites</div>
+									<div class="showcase__point-description">
+										{{project.contribution}}
+									</div>
+								</div>
+								<div class="showcase__point">
+									<div class="showcase__point-title">Technologies Used</div>
+									<div class="showcase__point-description">
+										{{project.technologies}}
+									</div>
+								</div>
+
+
+								<div class="showcase__point">
+									<div class="showcase__point-title">Details</div>
+									<div class="showcase__point-details-excerpt">
+										{{project.detalies}}<span class="showcase__readmore">more</span>
+									</div>
+
+									<div class="showcase__point-details-full">
+										{{project.detalies}}<span class="showcase__readless">less</span>
+									</div>
+								</div>
+								<a target="_blank" href="{{project.projectLink}}" class="showcase__button  ghost-button  ghost-button--realizations">Visit Website</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+    <script src="/js/dependencies.min.js" type="text/javascript"></script>
+    <script src="/js/projects.js" type="text/javascript"></script>
+</body>
+</html>
